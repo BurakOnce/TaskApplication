@@ -53,4 +53,15 @@ public class TaskServiceImpl implements TaskService {
             return ResponseEntity.ok("Task deleted successfully."); // Başarı durumu (HTTP 200)
         }else{return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task deleted is failure. ID: " + id);}
     }
+    @Override
+    public List<Task> undoneTask() {
+        List<Task> incompleteTasks = taskRepository.findTaskByCompletedIsFalse();
+        if (!incompleteTasks.isEmpty()) {
+                return taskRepository.findTaskByCompletedIsFalse();
+            } else {
+                System.out.println("There is no Undone Task");
+            }
+        return taskRepository.findTaskByCompletedIsFalse();
+        }
+
 }
