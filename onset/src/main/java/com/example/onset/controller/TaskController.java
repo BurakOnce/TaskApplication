@@ -52,5 +52,10 @@ public class TaskController {
             return ResponseEntity.ok("Task deleted successfully.");
         }
 
+         @GetMapping("/undoneTask")
+         public List<Task> undoneTask(){
+            return taskService.undoneTask();
+        }
+
 
 }
