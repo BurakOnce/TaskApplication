@@ -16,4 +16,8 @@ public interface TaskService {
     ResponseEntity<String> updateTask(@PathVariable Long id, @RequestBody Task task);
 
     ResponseEntity<String> deleteTask(@PathVariable Long id);
+
+    List<Task> undoneTask();
+
 }
+
