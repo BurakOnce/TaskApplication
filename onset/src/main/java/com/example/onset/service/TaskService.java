@@ -18,6 +18,6 @@ public interface TaskService {
     ResponseEntity<String> deleteTask(@PathVariable Long id);
 
     List<Task> undoneTask();
+    Long getTaskCount();
 
 }
-
