@@ -2,6 +2,7 @@ package com.example.onset.service;
 
 import com.example.onset.model.Task;
 import com.example.onset.repository.TaskRepository;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -63,5 +64,8 @@ public class TaskServiceImpl implements TaskService {
             }
         return taskRepository.findTaskByCompletedIsFalse();
         }
-
+    @Override
+    public Long getTaskCount() {
+        return taskRepository.count();
+    }
 }
